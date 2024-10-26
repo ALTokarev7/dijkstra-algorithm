@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "dijkstra-algorithm"
+version = "0.1.0"
+description = "Implementation of Dijkstra's algorithm for finding optimal paths in graphs."
+authors = ["ALTokarev7"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
