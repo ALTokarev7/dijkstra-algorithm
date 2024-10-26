@@ -1,7 +1,7 @@
 from dijkstra import Dijkstra
 
 
-def enter_graph():
+def enter_graph() -> dict:
     stop = False
     graph = {}
     while not stop:
@@ -15,9 +15,8 @@ def enter_graph():
             graph[v_next_name] = {}
             add = True if input('Add more neighbors?  [y/n]: ') == 'y' else False
         stop = False if input('Add more vertices?  [y/n]: ') == 'y' else True
-
-    print(graph)
     return graph
+
 
 def main() -> None:
     graph = enter_graph()
@@ -29,6 +28,7 @@ def main() -> None:
     table, path = finder.run(start, end, crit)
     print('Path quality criterion: ', table[end].cost)
     print('Path:', '->'.join(path))
+
 
 if __name__ == '__main__':
     main()

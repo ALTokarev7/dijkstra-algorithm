@@ -1,21 +1,21 @@
 from queue import PriorityQueue
 from dataclasses import dataclass, field
-import queue
-from re import search
-from sys import path
+
 
 @dataclass(order=True)
 class Vertex:
     cost: float
-    name: str=field(compare=False)
+    name: str = field(compare=False)
+
 
 @dataclass(order=True)
 class Path:
     cost: float
-    prev: str=field(compare=False)
+    prev: str = field(compare=False)
+
 
 class Dijkstra(object):
-    def __init__(self):
+    def __init__(self) -> None:
         self.queue = PriorityQueue()
 
     def set_graph(self, graph: dict[str, dict[str, int]]) -> None:
@@ -33,13 +33,14 @@ class Dijkstra(object):
         else:
             return first+second
 
-    def run(self, start: str, end: str, opt_crit: str='max') -> tuple[dict[str, Path], list[str]]:
+    def run(self, start: str, end: str, opt_crit: str = 'max'
+            ) -> tuple[dict[str, Path], list[str]]:
         self.opt_crit = opt_crit
         self.create_path_table(start)
 
         searched = set()
         active = Vertex(cost=0, name=start)
-        while(active.name != end):
+        while active.name != end:
             for vertex_name, vertex_cost in self.graph[active.name].items():
                 new_cost = self.sum_costs(active.cost, vertex_cost)
                 if new_cost < self.path_table[vertex_name].cost:
