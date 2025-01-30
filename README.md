@@ -3,11 +3,11 @@ Implementation of Dijkstra's algorithm for finding optimal paths in graphs.
 
 ## To run:
 ```bash
-python dijkstra/main.py
+python main.py
 ```
 or:
 ```bash
-python3 dijkstra/main.py
+python3 main.py
 ```
 ## Sample:
 ### Enter this graph:

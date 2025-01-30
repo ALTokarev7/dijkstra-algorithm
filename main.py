@@ -1,4 +1,4 @@
-from dijkstra import Dijkstra
+from dijkstra.dijkstra import Dijkstra
 
 
 def enter_graph() -> dict:
